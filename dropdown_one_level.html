@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dropdown</title>
+        <style type="text/css">
+            * { margin: 0; padding: 0; }
+
+            ul, li { list-style-type: none; }
+
+            li > ul {
+                position: absolute;
+                pointer-events: none; /* evita abrir subul ao passar mouse na área onde ele vai ficar se for aberto */
+            }
+
+            /* uls um nível abaixo do nav */
+            nav > ul { display: flex; }
+
+            /* estilização do li pai */
+            nav > ul > li { background: green; opacity: 1; }
+            nav > ul > li:hover { background: pink; opacity: 1; }
+
+            li a {
+                white-space: nowrap; /* impede a quebra de linha do texto */
+                display: block;
+            }
+
+            li:hover > ul {
+                pointer-events: initial; /* pra manter o subul aberto */
+            }
+
+            /* filhos com hover no pai */
+            li:hover > ul > li { opacity: 1; }
+
+            /* estilização de pai e filho */
+            nav a {
+                color: #FFF;
+                border: 2px solid red;
+                position: relative;
+                cursor: pointer;
+            }
+
+            /* filhos sem hover no pai */
+            nav > ul > li > ul > li {
+                transition: opacity 0.6s;
+                opacity: 0;
+            }
+
+            /* estilização dos filhos */
+            nav > ul > li > ul > li a { background: blue; }
+            nav > ul > li > ul > li a:hover { background: cyan; }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+            <li id="demo1">
+                <a>drop</a>
+                <ul>
+                    <li><a>about</a></li>
+                    <li><a>settings</a></li>
+                    <li><a>help</a></li>
+                </ul>
+            </li>
+            <li id="demo2">
+                <a>down</a>
+                <ul>
+                    <li><a>pt-br</a></li>
+                    <li><a>en-us</a></li>
+                    <li><a>es-es</a></li>
+                </ul>
+            </li>
+            </ul>
+        </nav>
+    </body>
+</html>

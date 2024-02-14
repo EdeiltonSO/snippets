@@ -1,0 +1,89 @@
+<!-- baseado em: https://gist.github.com/Boaofwoa/b8d7cb17383457be469c0cd82ad43280 -->
+<html lang="pt-br">
+    <head>
+        <title>Dropdown recursivo</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                background: #000;
+            }
+
+            /* funcionamento */
+
+            nav item {
+                position: relative;
+                display: block;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            nav item > menu {
+                position: absolute;
+                pointer-events: none;
+            }
+
+            nav > menu { display: flex; }
+
+            nav > menu > item { pointer-events: all; opacity: 1; }
+            menu item a { white-space: nowrap; display: block; }
+    
+            item:hover > menu {
+                pointer-events: initial;
+                z-index: 1; /* evita que o formato do submenu não selecionado fique por cima do menu selecionado quando há um background na página */
+            }
+
+            item:hover > menu > item,
+            menu:hover > item{
+                opacity: 1;
+            }
+
+            nav > menu > item item menu {
+                transform: translateX(100%);
+                top: 0;
+                right: 0;
+            }
+
+            /* estilos */
+
+            nav a {
+                background: #00F;
+                color: #FFF;
+            }
+
+            nav a:hover {
+                background: #F00;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <menu>
+            <item>
+                <a>drop</a>
+                <menu>
+                    <item><a>about</a></item>
+                    <item>
+                        <a>music</a>
+                        <menu>
+                            <item><a>big</a></item>
+                            <item><a>time</a></item>
+                            <item><a>rush</a></item>
+                        </menu>
+                    </item>
+                    <item><a>help</a></item>
+                </menu>
+            </item>
+            <item>
+                <a>down</a>
+                <menu>
+                    <item><a>pt-br</a></item>
+                    <item><a>en-us</a></item>
+                    <item><a>es-es</a></item>
+                </menu>
+            </item>
+            </menu>
+        </nav>
+    </body>
+</html>

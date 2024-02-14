@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Checkbox</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            input {
+                appearance: none; /* permite a estilização do container */
+                position: absolute; /* usado pelo ícone de checkmark */
+
+                width: 16px;
+                height: 16px;
+                cursor: pointer;
+                border-radius: 50%;
+
+                /* unchecked */
+                background-color: transparent;
+                border: 2px solid #F00;
+
+                &:checked {
+                    background-color: #00F;
+                    border: 2px solid #00F;
+
+                    /* estilização do ícone */
+                    &::after {
+                        /* content: url(${icon}); */ /* ícone com imagem */
+                        content: ''; /* com caractere (obrigatório mesmo vazio) */
+                        /* font-size: 12px; /* estilização do texto no content */
+                        /* color: red;  /* estilização do texto no content */
+
+                        /* posicionamento do ícone */
+                        position: absolute;
+                        top: 45%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+
+                        /* estilização do ícone */
+                        width: 3px;
+                        height: 6px;
+                        border: solid #FFF;
+                        border-width: 0 2px 2px 0;
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <label>
+            <input type="checkbox" checked />
+        </label>
+    </body>
+</html>
