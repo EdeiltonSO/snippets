@@ -7,4 +7,4 @@ Aquela gaveta bagunçada cheia de coisa que a gente tem certeza que vai usar dep
 - Modelos de checkbox;
 - O `console.log` implementado com Stream do Node;
 - Modelos de menu dropdown;
-- Receptor de sinal infravermelho;
+- Código pra receptor de sinal infravermelho;
